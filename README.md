@@ -1,5 +1,5 @@
 # Flutter-UI
 
-#Inspiration App
+## ScreenShot
 
-<img src="../imagesReadMe/Tech.jpg">
+<img src="imagesReadMe/Tech.jpg" height="500em" />
