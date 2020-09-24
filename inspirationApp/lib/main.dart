@@ -36,6 +36,7 @@ class _HomepageState extends State<Homepage> {
             width: double.infinity,
             decoration: BoxDecoration(
               color: Colors.white,
+              borderRadius: BorderRadius.vertical(bottom: Radius.circular(30)),
             ),
             padding: EdgeInsets.all(20.0),
             child: Column(
@@ -71,12 +72,53 @@ class _HomepageState extends State<Homepage> {
                       hintStyle: TextStyle(color: Colors.grey, fontSize: 15),
                     ),
                   ),
+                ),
+                SizedBox(
+                  height: 10,
+                )
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  'Promo Today',
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Container(
+                  height: 200,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: <Widget>[
+                      promoCard(''),
+                    ],
+                  ),
                 )
               ],
             ),
           )
         ],
       )),
+    );
+  }
+
+  Widget promoCard(image) {
+    return AspectRatio(
+      aspectRatio: 2 / 3,
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.orange,
+        ),
+      ),
     );
   }
 }
