@@ -116,8 +116,11 @@ class _HomepageState extends State<Homepage> {
       aspectRatio: 2 / 3,
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.orange,
-        ),
+            color: Colors.orange,
+            borderRadius: BorderRadius.circular(20),
+            image: DecorationImage(
+              image: AssetImage('assets/images/1.jpg'),
+            )),
       ),
     );
   }
