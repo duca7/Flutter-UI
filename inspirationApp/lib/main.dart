@@ -50,8 +50,11 @@ class _HomepageState extends State<Homepage> {
                   height: 3,
                 ),
                 Text(
-                  'Inspiration',
-                  style: TextStyle(color: Colors.black87, fontSize: 40),
+                  'Technological',
+                  style: TextStyle(
+                      color: Colors.black87,
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
                   height: 20,
@@ -99,10 +102,53 @@ class _HomepageState extends State<Homepage> {
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: <Widget>[
-                      promoCard(''),
+                      promoCard('assets/images/1.jpg'),
+                      promoCard('assets/images/2.jpg'),
+                      promoCard('assets/images/3.jpg'),
+                      promoCard('assets/images/4.jpg'),
                     ],
                   ),
-                )
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  height: 150,
+                  decoration: BoxDecoration(
+                    color: Colors.orange,
+                    borderRadius: BorderRadius.circular(20),
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage('assets/images/3.jpg'),
+                    ),
+                  ),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      gradient: LinearGradient(
+                        begin: Alignment.bottomRight,
+                        stops: [0.1, 0.9],
+                        colors: [
+                          Colors.black.withOpacity(.6),
+                          Colors.black.withOpacity(.1),
+                        ],
+                      ),
+                    ),
+                    child: Align(
+                      alignment: Alignment.bottomLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Text(
+                          'Best Design',
+                          style: TextStyle(
+                              fontSize: 15,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           )
@@ -113,14 +159,30 @@ class _HomepageState extends State<Homepage> {
 
   Widget promoCard(image) {
     return AspectRatio(
-      aspectRatio: 2 / 3,
+      aspectRatio: 2.6 / 3,
       child: Container(
+        margin: EdgeInsets.only(right: 15),
         decoration: BoxDecoration(
-            color: Colors.orange,
+          color: Colors.orange,
+          borderRadius: BorderRadius.circular(20),
+          image: DecorationImage(
+            fit: BoxFit.cover,
+            image: AssetImage(image),
+          ),
+        ),
+        child: Container(
+          decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            image: DecorationImage(
-              image: AssetImage('assets/images/1.jpg'),
-            )),
+            gradient: LinearGradient(
+              begin: Alignment.bottomRight,
+              stops: [0.1, 0.9],
+              colors: [
+                Colors.black.withOpacity(.8),
+                Colors.black.withOpacity(.1),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
