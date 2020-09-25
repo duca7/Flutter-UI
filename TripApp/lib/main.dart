@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(
       MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: Homepage(),
       ),
     );
@@ -34,6 +35,7 @@ class _HomepageState extends State<Homepage> {
         createPage(),
         createPage(),
         createPage(),
+        createPage(),
       ],
     ));
   }
@@ -43,6 +45,18 @@ class _HomepageState extends State<Homepage> {
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage('assets/images/one.jpg'),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.bottomRight,
+            colors: [
+              Colors.black.withOpacity(.9),
+              Colors.black.withOpacity(.1),
+            ],
+          ),
         ),
       ),
     );
