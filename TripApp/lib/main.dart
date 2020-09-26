@@ -32,15 +32,31 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
         body: PageView(
       children: <Widget>[
-        createPage('assets/images/one.jpg'),
-        createPage('assets/images/two.jpg'),
-        createPage('assets/images/three.jpg'),
-        createPage('assets/images/four.jpg'),
+        createPage(
+          image: 'assets/images/one.jpg',
+          title: 'US',
+          description: '1',
+        ),
+        createPage(
+          image: 'assets/images/two.jpg',
+          title: 'AHI',
+          description: '2',
+        ),
+        createPage(
+          image: 'assets/images/three.jpg',
+          title: 'Aha',
+          description: '3',
+        ),
+        createPage(
+          image: 'assets/images/four.jpg',
+          title: 'Ahu',
+          description: '4',
+        ),
       ],
     ));
   }
 
-  Widget createPage(image) {
+  Widget createPage({image, title, description}) {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
@@ -94,7 +110,7 @@ class _HomepageState extends State<Homepage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      'USA',
+                      title,
                       style: TextStyle(
                           fontSize: 40,
                           color: Colors.white,
@@ -167,6 +183,13 @@ class _HomepageState extends State<Homepage> {
                           style: TextStyle(
                             fontSize: 15,
                             color: Colors.white54,
+                          ),
+                        ),
+                        Text(
+                          description,
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white70,
                           ),
                         ),
                       ],
